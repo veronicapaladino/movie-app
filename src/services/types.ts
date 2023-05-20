@@ -48,3 +48,21 @@ export interface SpokenLanguage {
   iso_639_1: string;
   name: string;
 }
+
+export interface MovieVideos {
+  id: number;
+  results: Result[];
+}
+
+export interface Result {
+  id: string;
+  iso_3166_1: string;
+  iso_639_1: string;
+  key: string;
+  name: string;
+  official: boolean;
+  published_at: Date;
+  site: string;
+  size: number;
+  type: string;
+}

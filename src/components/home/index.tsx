@@ -20,16 +20,15 @@ export const Home = () => {
       .catch((error) => console.log(error));
   };
 
-  console.log(movies);
   return (
     <>
       <form className="searchbox" onSubmit={onSubmitSearch}>
         <input
           type="text"
-          placeholder="search"
+          placeholder="searchbox__search"
           onChange={(e) => setSearchKey(e.target.value)}
         />
-        <button className="btn btn-primary">Search</button>
+        <button className="searchbox__button">Search</button>
       </form>
       <div className="container">
         {movies.map((movie) => {

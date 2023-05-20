@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_KEY, API_URL } from "../constants/movies";
-import { IMovie } from "./types";
+import { IMovie, MovieVideos } from "./types";
 
 // Obtiene listado de peliculas populares
 export const fetchMovies = async (): Promise<IMovie[]> => {
@@ -29,8 +29,10 @@ export const searchMovies = async (query = ""): Promise<IMovie[]> => {
 };
 
 // Obtiene detalle de pelicula
-export const fetchMovie = async (movieId: number): Promise<IMovie> => {
-  const { data } = await axios.get(`${API_URL}/movie/${movieId}`, {
+export const fetchMovieVideos = async (
+  movieId: number
+): Promise<MovieVideos> => {
+  const { data } = await axios.get(`${API_URL}/movie/${movieId}/videos`, {
     params: {
       api_key: API_KEY.toString().trim(),
       append_to_response: "video",

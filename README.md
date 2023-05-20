@@ -1,9 +1,11 @@
-# typescript-template-app
+# movie-app
 
 
-Template para crear una app con: Typescript, React, Sass, Webpack, Babel, Jest, Eslint. Tiene como objetivo usar este proyecto como template para crear proyectos con React.
+App de peliculas: Typescript, React, Sass, Webpack, Babel, Jest, Eslint. 
 
-Configuración con webpack 5 y Babel 7.
+Utilizamos la API publica de [The Movie Database](https://developer.themoviedb.org/reference/intro/getting-started) para obtener el listado de películas
+
+
 
 ## Start
 

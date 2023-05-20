@@ -6,10 +6,10 @@ export const fetchMovies = async (
   discover: boolean,
   query = ""
 ): Promise<Movie[]> => {
-  const type = discover ? "discover" : "search";
+  const type = "popular";
   const {
     data: { results },
-  } = await axios.get(`${API_URL}/${type}/movie`, {
+  } = await axios.get(`${API_URL}/movie/${type}`, {
     params: {
       api_key: API_KEY.toString().trim(),
       query: query,

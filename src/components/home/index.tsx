@@ -18,8 +18,10 @@ export const Home = () => {
       {movies.map((movie) => {
         return (
           <div className="container__movie" key={movie.id}>
-            <img src={`${IMAGE_PATH + movie.poster_path}`}></img>
-            <h4>{movie.title}</h4>
+            <div className="container__movie--detail">
+              <img src={`${IMAGE_PATH + movie.poster_path}`}></img>
+              <h4>{movie.title}</h4>
+            </div>
           </div>
         );
       })}

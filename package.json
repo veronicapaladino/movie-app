@@ -1,5 +1,5 @@
 {
-  "name": "typescript-template-app",
+  "name": "movie-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/veronicapaladino/typescript-template-app.git"
+    "url": "git+https://github.com/veronicapaladino/movie-app.git"
   },
   "keywords": [],
   "author": "Veronica Paladino",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/veronicapaladino/typescript-template-app/issues"
+    "url": "https://github.com/veronicapaladino/movie-app/issues"
   },
-  "homepage": "https://github.com/veronicapaladino/typescript-template-app#readme",
+  "homepage": "https://github.com/veronicapaladino/movie-app#readme",
   "dependencies": {
     "axios": "^0.24.0",
     "eslint": "^8.7.0",
@@ -29,6 +29,7 @@
     "react-dom": "17.0.2",
     "react-helmet": "^6.1.0",
     "react-router-dom": "6.0.2",
+    "react-youtube": "^10.1.0",
     "webpack": "^5.64.2",
     "webpack-cli": "^4.9.1"
   },

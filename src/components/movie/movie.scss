@@ -7,5 +7,10 @@
     &__detail {
         display: flex;
         flex-direction: column;
+        
+        :hover {
+            cursor: pointer;
+            box-shadow: 0 0 10px black;
+        }
     }
 }

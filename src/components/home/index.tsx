@@ -16,14 +16,20 @@ export const Home = () => {
 
   useEffect(() => {
     fetchMovies()
-      .then((data) => setMovies(data))
+      .then((data) => {
+        setMovies(data);
+        setSelectedMovie(data[0]);
+      })
       .catch((error) => console.log(error));
   }, []);
 
   const onSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchMovies(searchKey)
-      .then((data) => setMovies(data))
+      .then((data) => {
+        setMovies(data);
+        setSelectedMovie(data[0]);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -45,10 +51,11 @@ export const Home = () => {
 
   return (
     <>
+      <h2 className="title">Trailer Popular Movies</h2>
       <form className="searchbox" onSubmit={onSubmitSearch}>
         <input
           type="text"
-          placeholder="searchbox__search"
+          placeholder="Search..."
           onChange={(e) => setSearchKey(e.target.value)}
         />
         <button className="searchbox__button">Search</button>

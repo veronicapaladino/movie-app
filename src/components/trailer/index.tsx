@@ -10,8 +10,7 @@ interface TrailerProps {
 
 const Trailer = ({ selectedMovie, trailer }: TrailerProps) => {
   const [playing, setPlaying] = useState(false);
-  console.log("selectedMovie", selectedMovie);
-  console.log("trailer", trailer);
+
   return (
     <>
       {selectedMovie ? (
@@ -25,7 +24,7 @@ const Trailer = ({ selectedMovie, trailer }: TrailerProps) => {
             <>
               <YouTube
                 videoId={trailer.key}
-                className="reproductor container"
+                className="reproductor"
                 opts={{
                   width: "100%",
                   height: "100%",
@@ -47,10 +46,10 @@ const Trailer = ({ selectedMovie, trailer }: TrailerProps) => {
             </>
           ) : (
             <div className="container">
-              <div className="">
+              <div className="container__content">
                 {trailer ? (
                   <button
-                    className="boton"
+                    className="container__boton"
                     onClick={() => setPlaying(true)}
                     type="button"
                   >
@@ -59,8 +58,8 @@ const Trailer = ({ selectedMovie, trailer }: TrailerProps) => {
                 ) : (
                   "Sorry, no trailer available"
                 )}
-                <h1 className="text-white">{selectedMovie.title}</h1>
-                <p className="text-white">{selectedMovie.overview}</p>
+                <h1 className="container__title">{selectedMovie.title}</h1>
+                <p className="container__overview">{selectedMovie.overview}</p>
               </div>
             </div>
           )}

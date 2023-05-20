@@ -4,21 +4,21 @@ import { IMovie, Result } from "../../services/types";
 import { IMAGE_PATH } from "../../constants/movies";
 
 interface TrailerProps {
-  movie: IMovie | null;
+  selectedMovie: IMovie | null;
   trailer: Result;
 }
 
-const Trailer = ({ movie, trailer }: TrailerProps) => {
+const Trailer = ({ selectedMovie, trailer }: TrailerProps) => {
   const [playing, setPlaying] = useState(false);
-  console.log("movie", movie);
+  console.log("selectedMovie", selectedMovie);
   console.log("trailer", trailer);
   return (
     <>
-      {movie ? (
+      {selectedMovie ? (
         <div
           className="viewtrailer"
           style={{
-            backgroundImage: `url("${IMAGE_PATH}${movie.backdrop_path}")`,
+            backgroundImage: `url("${IMAGE_PATH}${selectedMovie.backdrop_path}")`,
           }}
         >
           {playing ? (
@@ -59,8 +59,8 @@ const Trailer = ({ movie, trailer }: TrailerProps) => {
                 ) : (
                   "Sorry, no trailer available"
                 )}
-                <h1 className="text-white">{movie.title}</h1>
-                <p className="text-white">{movie.overview}</p>
+                <h1 className="text-white">{selectedMovie.title}</h1>
+                <p className="text-white">{selectedMovie.overview}</p>
               </div>
             </div>
           )}

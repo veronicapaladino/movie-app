@@ -5,16 +5,4 @@
     gap: 200px 50px;
     align-items: center;
     justify-content: center;
-
-    &__movie {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        height: 200px;
-
-        &--detail {
-            display: flex;
-            flex-direction: column;
-        }
-    }
 }

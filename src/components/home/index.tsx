@@ -1,30 +1,41 @@
 import React, { useState, useEffect } from "react";
-import YouTube from "react-youtube";
-import { fetchMovies } from "../../services/movies";
-import { Movie } from "../../services/types";
-import { IMAGE_PATH } from "../../constants/movies";
+import { fetchMovies, searchMovies } from "../../services/movies";
+import { IMovie } from "../../services/types";
+import Movie from "../movie";
 
 export const Home = () => {
-  const [movies, setMovies] = useState([] as Movie[]);
+  const [movies, setMovies] = useState([] as IMovie[]);
+  const [searchKey, setSearchKey] = useState("");
 
   useEffect(() => {
-    fetchMovies(true)
+    fetchMovies()
       .then((data) => setMovies(data))
       .catch((error) => console.log(error));
   }, []);
 
+  const onSubmitSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    searchMovies(searchKey)
+      .then((data) => setMovies(data))
+      .catch((error) => console.log(error));
+  };
+
+  console.log(movies);
   return (
-    <div className="container">
-      {movies.map((movie) => {
-        return (
-          <div className="container__movie" key={movie.id}>
-            <div className="container__movie--detail">
-              <img src={`${IMAGE_PATH + movie.poster_path}`}></img>
-              <h4>{movie.title}</h4>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <form className="searchbox" onSubmit={onSubmitSearch}>
+        <input
+          type="text"
+          placeholder="search"
+          onChange={(e) => setSearchKey(e.target.value)}
+        />
+        <button className="btn btn-primary">Search</button>
+      </form>
+      <div className="container">
+        {movies.map((movie) => {
+          return <Movie movie={movie} key={movie.id} />;
+        })}
+      </div>
+    </>
   );
 };

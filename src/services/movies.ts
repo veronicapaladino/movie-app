@@ -2,6 +2,8 @@ import axios from "axios";
 import { API_KEY, API_URL } from "../constants/movies";
 import { IMovie, MovieVideos } from "./types";
 
+// Todos los endpoints de la API de peliculas estan detallados en https://developer.themoviedb.org/docs/getting-started/introduction
+
 // Obtiene listado de peliculas populares
 export const fetchMovies = async (): Promise<IMovie[]> => {
   const type = "popular";
